@@ -1,0 +1,55 @@
+services:
+
+  mongo1:
+    image: mongo
+    container_name: mongo1
+    command: mongod --replSet rs0 --bind_ip_all --keyFile /etc/mongo-keyfile
+    volumes:
+      - ./mongo1:/data/db
+      - ./mongo-keyfile:/etc/mongo-keyfile
+
+  mongo2:
+    image: mongo
+    container_name: mongo2
+    command: mongod --replSet rs0 --bind_ip_all --keyFile /etc/mongo-keyfile
+    volumes:
+      - ./mongo2:/data/db
+      - ./mongo-keyfile:/etc/mongo-keyfile
+
+  mongo3:
+    image: mongo
+    container_name: mongo3
+    command: mongod --replSet rs0 --bind_ip_all --keyFile /etc/mongo-keyfile
+    volumes:
+      - ./mongo3:/data/db
+      - ./mongo-keyfile:/etc/mongo-keyfile
+
+  
+  mongo4:
+    image: mongo
+    container_name: mongo4
+    command: mongod --replSet rs0 --bind_ip_all --keyFile /etc/mongo-keyfile
+    volumes:
+      - ./mongo4:/data/db
+      - ./mongo-keyfile:/etc/mongo-keyfile
+
+  mongo5:
+    image: mongo
+    container_name: mongo5
+    command: mongod --replSet rs0 --bind_ip_all --keyFile /etc/mongo-keyfile
+    volumes:
+      - ./mongo5:/data/db
+      - ./mongo-keyfile:/etc/mongo-keyfile
+
+  mongo6:
+    image: mongo
+    container_name: mongo6
+    command: mongod --replSet rs0 --bind_ip_all --keyFile /etc/mongo-keyfile
+    volumes:
+      - ./mongo6:/data/db
+      - ./mongo-keyfile:/etc/mongo-keyfile
+
+networks:
+  default:
+    external: true
+    name: replica_default
